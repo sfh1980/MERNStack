@@ -14,7 +14,7 @@ const UserForm = (props) => {
     const [passwordError, setPasswordError] = useState("");
     const [confirmPasswordError, setConfirmPasswordError] = useState("");
 
-    const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
+    
 
     const handleFirstName = (e) => {
         setFirstName(e.target.value)
@@ -59,8 +59,8 @@ const UserForm = (props) => {
 
     const createUser = (e) => {
         e.preventDefault();
-        const newUser = { firstName, lastName, email, password, confirmPassword, hasBeenSubmitted };
-        setHasBeenSubmitted(true);
+        const newUser = { firstName, lastName, email, password, confirmPassword };
+        
         console.log("Welcome", newUser);
     };
     return (
@@ -69,47 +69,47 @@ const UserForm = (props) => {
                 <form onSubmit={createUser}>
                     <div>
                         <label>First Name: </label>
-                        <input type="text" onChange={handleFirstName} />
+                        <input type="text" onChange={handleFirstName} value={firstName} />
                         {
                             firstNameError ?
                                 <p style={{ color: 'red' }}>{firstNameError}</p> :
-                                ''
+                                <p></p>
                         }
                     </div>
                     <div>
                         <label>Last Name: </label>
-                        <input type="text" onChange={handleLastName} />
+                        <input type="text" onChange={handleLastName} value={lastName} />
                         {
                             lastNameError ?
                                 <p style={{ color: 'red' }}>{lastNameError}</p> :
-                                ''
+                                <p></p>
                         }
                     </div>
                     <div>
                         <label>Email Address: </label>
-                        <input type="text" onChange={handleEmail} />
+                        <input type="text" onChange={handleEmail} value={email}/>
                         {
                             emailError ?
                                 <p style={{ color: 'red' }}>{emailError}</p> :
-                                ''
+                                <p></p>
                         }
                     </div>
                     <div>
                         <label>Password: </label>
-                        <input type="text" onChange={handlePassword} />
+                        <input type="text" onChange={handlePassword} value={password} />
                         {
                             passwordError ?
                                 <p style={{ color: 'red' }}>{passwordError}</p> :
-                                ''
+                                <p></p>
                         }
                     </div>
                     <div>
                         <label>Confirm Password: </label>
-                        <input type="text" onChange={handleConfirmPassword} />
+                        <input type="text" onChange={handleConfirmPassword} value={confirmPassword} />
                         {
                             confirmPasswordError ?
                                 <p style={{ color: 'red' }}>{confirmPasswordError}</p> :
-                                ''
+                                <p></p>
                         }
                     </div>
                     <input type="submit" value="Create User" />

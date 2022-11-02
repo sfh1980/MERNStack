@@ -15,12 +15,12 @@ const people = [
 function App() {
   return (
     <div className="App">
+      <h1></h1>
+      {people.map((person, i) => {
+      return <PersonCard firstName={person.firstName} lastName={person.lastName} age={person.age} hairColor={person.hairColor}/>
       
-      <PersonCard firstName={people[0].firstName} lastName={people[0].lastName} age={people[0].age} hairColor={people[0].hairColor}/>
-      <PersonCard firstName={people[1].firstName} lastName={people[1].lastName} age={people[1].age} hairColor={people[1].hairColor}/>
-      <PersonCard firstName={people[2].firstName} lastName={people[2].lastName} age={people[2].age} hairColor={people[2].hairColor}/>
-      <PersonCard firstName={people[3].firstName} lastName={people[3].lastName} age={people[3].age} hairColor={people[3].hairColor}/>
-
+      })}
+      
     </div>
   );
 }
