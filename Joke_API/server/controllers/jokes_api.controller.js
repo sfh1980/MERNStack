@@ -44,6 +44,7 @@ module.exports.deleteAnExistingJokes_API = (req, res) => {
         .catch(err => res.json({ message: 'Something went wrong', error: err }));
 }
 
+
 //RANDOM
 module.exports.findRandomJokes_API = (req, res) => {
     Jokes_API.aggregate([{$sample: {size:1}}])
