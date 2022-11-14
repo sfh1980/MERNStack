@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const PORT = 8000;
-const DB = "Authors";
+const DB = "Authors"; 
 
 
 //MIDDLEWARE-CONFIG EXPRESS
